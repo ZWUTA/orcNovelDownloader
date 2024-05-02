@@ -10,7 +10,7 @@ WindowIcon = "app/resource/images/logo.png"
 # ? Redmi Note12T Pro [170,2360,50,1000]
 # ? Redmi Note7 Pro   [145,2200,50,1000]
 
-ImgCutPos = [145,2200,50,1000]
+ImgCutPos = [170,2360,50,1000]
 
 # ! 识别设置
     # * 识别增强
@@ -37,7 +37,7 @@ MaximumPage = 2147483647
 # ! OCR设置
 RecModel = "densenet_lite_136-gru"
 DetModel = "db_resnet34"
-OcrProcessorsType = "cuda"  # ['cpu', 'gpu', 'cuda']
+OcrProcessorsType = "cpu"  # ['cpu', 'gpu', 'cuda']
 
 # ! 文件路径
     # * 临时文件路径

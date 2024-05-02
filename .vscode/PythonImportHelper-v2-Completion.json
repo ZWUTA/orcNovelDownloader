@@ -1929,14 +1929,6 @@
         "documentation": {}
     },
     {
-        "label": "QtCore",
-        "importPath": "PyQt5",
-        "description": "PyQt5",
-        "isExtraImport": true,
-        "detail": "PyQt5",
-        "documentation": {}
-    },
-    {
         "label": "Queue",
         "importPath": "queue",
         "description": "queue",
@@ -2857,6 +2849,14 @@
         "documentation": {}
     },
     {
+        "label": "QtCore",
+        "importPath": "PySide2",
+        "description": "PySide2",
+        "isExtraImport": true,
+        "detail": "PySide2",
+        "documentation": {}
+    },
+    {
         "label": "typing",
         "kind": 6,
         "isExtraImport": true,
@@ -3381,7 +3381,7 @@
         "kind": 2,
         "importPath": "app.resource.resource_rc",
         "description": "app.resource.resource_rc",
-        "peekOfCode": "def qInitResources():\n    QtCore.qRegisterResourceData(rcc_version, qt_resource_struct, qt_resource_name, qt_resource_data)\ndef qCleanupResources():\n    QtCore.qUnregisterResourceData(rcc_version, qt_resource_struct, qt_resource_name, qt_resource_data)\nqInitResources()",
+        "peekOfCode": "def qInitResources():\n    QtCore.qRegisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)\ndef qCleanupResources():\n    QtCore.qUnregisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)\nqInitResources()",
         "detail": "app.resource.resource_rc",
         "documentation": {}
     },
@@ -3390,7 +3390,7 @@
         "kind": 2,
         "importPath": "app.resource.resource_rc",
         "description": "app.resource.resource_rc",
-        "peekOfCode": "def qCleanupResources():\n    QtCore.qUnregisterResourceData(rcc_version, qt_resource_struct, qt_resource_name, qt_resource_data)\nqInitResources()",
+        "peekOfCode": "def qCleanupResources():\n    QtCore.qUnregisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)\nqInitResources()",
         "detail": "app.resource.resource_rc",
         "documentation": {}
     },
@@ -3399,7 +3399,16 @@
         "kind": 5,
         "importPath": "app.resource.resource_rc",
         "description": "app.resource.resource_rc",
-        "peekOfCode": "qt_resource_data = b\"\\\n\\x00\\x00\\x01\\xfb\\\n\\x53\\\n\\x61\\x6d\\x70\\x6c\\x65\\x43\\x61\\x72\\x64\\x20\\x7b\\x0a\\x20\\x20\\x20\\x20\\\n\\x62\\x6f\\x72\\x64\\x65\\x72\\x3a\\x20\\x31\\x70\\x78\\x20\\x73\\x6f\\x6c\\x69\\\n\\x64\\x20\\x72\\x67\\x62\\x28\\x33\\x35\\x2c\\x20\\x33\\x35\\x2c\\x20\\x33\\x35\\\n\\x29\\x3b\\x0a\\x20\\x20\\x20\\x20\\x62\\x6f\\x72\\x64\\x65\\x72\\x2d\\x72\\x61\\\n\\x64\\x69\\x75\\x73\\x3a\\x20\\x36\\x70\\x78\\x3b\\x0a\\x20\\x20\\x20\\x20\\x62\\\n\\x61\\x63\\x6b\\x67\\x72\\x6f\\x75\\x6e\\x64\\x2d\\x63\\x6f\\x6c\\x6f\\x72\\x3a\\\n\\x20\\x72\\x67\\x62\\x28\\x35\\x30\\x2c\\x20\\x35\\x30\\x2c\\x20\\x35\\x30\\x29\\",
+        "peekOfCode": "qt_resource_data = b\"\\\n\\x00\\x05\\x17\\xd1\\\n\\xff\\\n\\xd8\\xff\\xdb\\x00\\x84\\x00\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\\n\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\\n\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\\n\\x01\\x02\\x02\\x02\\x02\\x02\\x02\\x02\\x02\\x02\\x02\\x02\\x03\\x03\\x03\\x03\\\n\\x03\\x03\\x03\\x03\\x03\\x03\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x02\\x01\\x01\\\n\\x02\\x02\\x02\\x01\\x02\\x02\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\\n\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\",
+        "detail": "app.resource.resource_rc",
+        "documentation": {}
+    },
+    {
+        "label": "\\x0c\\xbe\\xb3\\xea\\x7fY",
+        "kind": 5,
+        "importPath": "app.resource.resource_rc",
+        "description": "app.resource.resource_rc",
+        "peekOfCode": "\\x0c\\xbe\\xb3\\xea\\x7fY = \\xe1\\x8a\\xec\\xe0\\x11\\xee\\x19\\\n\\xf5[\\xe5\\xb2\\x08\\xd66\\xcb\\x02\\xa9\\xac\\xf6\\xa9X\\x04o\\\nk\\xa9\\x11\\xbc\\x11\\x93\\xe2,\\x22e\\x17i;;^\\xdb\\\n.\\xe5v\\xcb\\xf9\\xdf\\x221\\x92\\x94a_\\x9bv.\\xe9\\\n\\x91\\xe5\\x1f\\x99|\\x8d\\x1d;\\xf4\\x8f.\\xe0\\xc3G\\xc1\\xd7\\\n\\xc0[M17\\xfe\\x90\\xdf\\xfa\\xe1#+\\xdcK\\x1b\\x03\\\n\\xbf\\x1d\\xea\\xdc\\x1e\\xbb\\x86_~\\x99\\x98\\xa8@\\x16R\\x0c\\\n\\xfe\\x17\\xe7\\xaem\\xc6\\x8c\\x83\\x93\\xde*\\xd4\\x90\\xeb\\xd8\\xb2\\\n\\xc8\\x97\\x22\\x1aZ\\xb1>\\xb6\\x97\\xcd\\x94$3\\x07\\x9c\\xa6\\\n.#+\\x5cn\\xe0\\xee2\\xc7*7\\xb3\\x11\\xc5V\\x05\\",
         "detail": "app.resource.resource_rc",
         "documentation": {}
     },
@@ -3408,34 +3417,16 @@
         "kind": 5,
         "importPath": "app.resource.resource_rc",
         "description": "app.resource.resource_rc",
-        "peekOfCode": "qt_resource_name = b\"\\\n\\x00\\x07\\\n\\x0d\\x83\\x2c\\x59\\\n\\x00\\x67\\\n\\x00\\x61\\x00\\x6c\\x00\\x6c\\x00\\x65\\x00\\x72\\x00\\x79\\\n\\x00\\x06\\\n\\x07\\x03\\x7d\\xc3\\\n\\x00\\x69\\\n\\x00\\x6d\\x00\\x61\\x00\\x67\\x00\\x65\\x00\\x73\\\n\\x00\\x04\\",
+        "peekOfCode": "qt_resource_name = b\"\\\n\\x00\\x07\\\n\\x0d\\x83,Y\\\n\\x00g\\\n\\x00a\\x00l\\x00l\\x00e\\x00r\\x00y\\\n\\x00\\x03\\\n\\x00\\x00x\\xa3\\\n\\x00q\\\n\\x00s\\x00s\\\n\\x00\\x04\\",
         "detail": "app.resource.resource_rc",
         "documentation": {}
     },
     {
-        "label": "qt_resource_struct_v1",
+        "label": "qt_resource_struct",
         "kind": 5,
         "importPath": "app.resource.resource_rc",
         "description": "app.resource.resource_rc",
-        "peekOfCode": "qt_resource_struct_v1 = b\"\\\n\\x00\\x00\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x01\\\n\\x00\\x00\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x02\\\n\\x00\\x00\\x00\\x34\\x00\\x02\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x7c\\\n\\x00\\x00\\x00\\x26\\x00\\x02\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x7a\\\n\\x00\\x00\\x00\\x14\\x00\\x02\\x00\\x00\\x00\\x0b\\x00\\x00\\x00\\x05\\\n\\x00\\x00\\x03\\x42\\x00\\x02\\x00\\x00\\x00\\x08\\x00\\x00\\x00\\x72\\\n\\x00\\x00\\x02\\xcc\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x1c\\x35\\xbc\\\n\\x00\\x00\\x02\\x4e\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x05\\xdd\\x64\\\n\\x00\\x00\\x02\\xb4\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x18\\x1e\\x72\\",
-        "detail": "app.resource.resource_rc",
-        "documentation": {}
-    },
-    {
-        "label": "qt_resource_struct_v2",
-        "kind": 5,
-        "importPath": "app.resource.resource_rc",
-        "description": "app.resource.resource_rc",
-        "peekOfCode": "qt_resource_struct_v2 = b\"\\\n\\x00\\x00\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x01\\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\\n\\x00\\x00\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x02\\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\\n\\x00\\x00\\x00\\x34\\x00\\x02\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x7c\\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\\n\\x00\\x00\\x00\\x26\\x00\\x02\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x7a\\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\\n\\x00\\x00\\x00\\x14\\x00\\x02\\x00\\x00\\x00\\x0b\\x00\\x00\\x00\\x05\\",
-        "detail": "app.resource.resource_rc",
-        "documentation": {}
-    },
-    {
-        "label": "qt_version",
-        "kind": 5,
-        "importPath": "app.resource.resource_rc",
-        "description": "app.resource.resource_rc",
-        "peekOfCode": "qt_version = [int(v) for v in QtCore.qVersion().split('.')]\nif qt_version < [5, 8, 0]:\n    rcc_version = 1\n    qt_resource_struct = qt_resource_struct_v1\nelse:\n    rcc_version = 2\n    qt_resource_struct = qt_resource_struct_v2\ndef qInitResources():\n    QtCore.qRegisterResourceData(rcc_version, qt_resource_struct, qt_resource_name, qt_resource_data)\ndef qCleanupResources():",
+        "peekOfCode": "qt_resource_struct = b\"\\\n\\x00\\x00\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x01\\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\\n\\x00\\x00\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x02\\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\\n\\x00\\x00\\x00\\x14\\x00\\x02\\x00\\x00\\x00\\x02\\x00\\x00\\x00|\\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\\n\\x00\\x00\\x00 \\x00\\x02\\x00\\x00\\x00\\x02\\x00\\x00\\x00z\\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\\n\\x00\\x00\\x00.\\x00\\x02\\x00\\x00\\x00\\x0b\\x00\\x00\\x00\\x05\\",
         "detail": "app.resource.resource_rc",
         "documentation": {}
     },
@@ -4533,7 +4524,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "WindowTitle = \"AndreaNeoNovelDownloader\"\nWindowIcon = \"app/resource/images/logo.png\"\n# ! 裁切设置\n# * 裁剪坐标为[y0:y1, x0:x1]\n#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [145,2200,50,1000]\n# ! 识别设置\n    # * 识别增强",
+        "peekOfCode": "WindowTitle = \"AndreaNeoNovelDownloader\"\nWindowIcon = \"app/resource/images/logo.png\"\n# ! 裁切设置\n# * 裁剪坐标为[y0:y1, x0:x1]\n#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强",
         "detail": "config",
         "documentation": {}
     },
@@ -4542,7 +4533,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "WindowIcon = \"app/resource/images/logo.png\"\n# ! 裁切设置\n# * 裁剪坐标为[y0:y1, x0:x1]\n#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [145,2200,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4",
+        "peekOfCode": "WindowIcon = \"app/resource/images/logo.png\"\n# ! 裁切设置\n# * 裁剪坐标为[y0:y1, x0:x1]\n#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4",
         "detail": "config",
         "documentation": {}
     },
@@ -4551,7 +4542,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [145,2200,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4\nZoomStage = True if(ZoomLevel != 0) else False\n    # * 标题识别\nTitleThresholdHigh = 70",
+        "peekOfCode": "#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4\nZoomStage = True if(ZoomLevel != 0) else False\n    # * 标题识别\nTitleThresholdHigh = 70",
         "detail": "config",
         "documentation": {}
     },
@@ -4560,7 +4551,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "ImgCutPos = [145,2200,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4\nZoomStage = True if(ZoomLevel != 0) else False\n    # * 标题识别\nTitleThresholdHigh = 70\nEnable_TitleHigh = False\nTitleRegularExpression = \"^第.*章.*\"\nEnable_TitleRegularExpression = True",
+        "peekOfCode": "ImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4\nZoomStage = True if(ZoomLevel != 0) else False\n    # * 标题识别\nTitleThresholdHigh = 70\nEnable_TitleHigh = False\nTitleRegularExpression = \"^第.*章.*\"\nEnable_TitleRegularExpression = True",
         "detail": "config",
         "documentation": {}
     },
@@ -4641,7 +4632,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "LinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cuda\"  # ['cpu', 'gpu', 'cuda']",
+        "peekOfCode": "LinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']",
         "detail": "config",
         "documentation": {}
     },
@@ -4650,7 +4641,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "Enable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cuda\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径",
+        "peekOfCode": "Enable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径",
         "detail": "config",
         "documentation": {}
     },
@@ -4659,7 +4650,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "NextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cuda\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"",
+        "peekOfCode": "NextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4668,7 +4659,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "MaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cuda\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"",
+        "peekOfCode": "MaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4677,7 +4668,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "RecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cuda\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"",
+        "peekOfCode": "RecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4686,7 +4677,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "DetModel = \"db_resnet34\"\nOcrProcessorsType = \"cuda\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径",
+        "peekOfCode": "DetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径",
         "detail": "config",
         "documentation": {}
     },
@@ -4695,7 +4686,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "OcrProcessorsType = \"cuda\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/临时文件/noveldownload\"",
+        "peekOfCode": "OcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/临时文件/noveldownload\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4839,7 +4830,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class OcrThread(QThread):\n    picUpdate = pyqtSignal()\n    mdUpdate = pyqtSignal(str)\n    tootipTitleUpdate = pyqtSignal(str)\n    tooltipContentUpdate = pyqtSignal(str)\n    indexdisplayValUpdate = pyqtSignal(int)\n    taskdone = pyqtSignal()\n    def __init__(self) -> None:\n        super(OcrThread,self).__init__()\n    def setTarget(self,page_add:int,page_index:int,prefix:str,img_out_switch:bool):",
+        "peekOfCode": "class OcrThread(QThread):\n    picUpdate = pyqtSignal()\n    mdUpdate = pyqtSignal(str)\n    tootipTitleUpdate = pyqtSignal(str)\n    tooltipContentUpdate = pyqtSignal(str)\n    indexdisplayValUpdate = pyqtSignal(int)\n    taskdone = pyqtSignal()\n    def __init__(self) -> None:\n        super(OcrThread,self).__init__()\n        self.enable_ocr = False",
         "detail": "main",
         "documentation": {}
     },

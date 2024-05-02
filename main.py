@@ -49,6 +49,13 @@ class CommandWidget(QFrame):
         self.ImgOutBottom.setMaximumWidth(80)
         self.ImgOutBottom.checkedChanged.connect(self.ImgOutBottom_onCheckedChanged)
         
+        self.OcrSwitchLabel = QLabel()
+        self.OcrSwitchLabel.setText("启动OCR")
+        self.OcrSwitchBottom = SwitchButton(parent=self)
+        self.OcrSwitchBottom.setMinimumWidth(80)
+        self.OcrSwitchBottom.setMaximumWidth(80)
+        self.OcrSwitchBottom.checkedChanged.connect(self.OcrSwitch_onCheckedChanged)
+        
         self.PrefixLabel = QLabel()
         self.PrefixLabel.setText("文件名前缀")
         self.PrefixInput = LineEdit(self)
@@ -71,6 +78,8 @@ class CommandWidget(QFrame):
         
         self.layout.addWidget(self.ImgOutLabel)
         self.layout.addWidget(self.ImgOutBottom)
+        self.layout.addWidget(self.OcrSwitchLabel)
+        self.layout.addWidget(self.OcrSwitchBottom)
         self.layout.addWidget(self.PrefixLabel)
         self.layout.addWidget(self.PrefixInput)
         self.layout.addWidget(self.ImgIndexLabel)
@@ -80,9 +89,17 @@ class CommandWidget(QFrame):
         self.layout.addWidget(self.StartRunBottom)
         
         self.setLayout(self.layout)
-        
         self.ImgOutBottom.setChecked(False)
 
+    def OcrSwitch_onCheckedChanged(self,isChecked:bool):
+        if isChecked:
+            text = "On"
+            self.context.ocr_thread.OcrSwitch(True)
+        else:
+            text = "Off"
+            self.context.ocr_thread.OcrSwitch(False)
+        #text = "On " if isChecked else "Off"
+        self.OcrSwitchBottom.setText(text)
 
     def ImgOutBottom_onCheckedChanged(self, isChecked:bool):
         if isChecked:
@@ -351,6 +368,7 @@ class OcrThread(QThread):
     taskdone = pyqtSignal()
     def __init__(self) -> None:
         super(OcrThread,self).__init__()
+        self.enable_ocr = False
     def setTarget(self,page_add:int,page_index:int,prefix:str,img_out_switch:bool):
         self.page_add = page_add
         self.page_index = page_index
@@ -358,6 +376,8 @@ class OcrThread(QThread):
         self.img_out_switch = img_out_switch
     def IMGoutSwitch(self,satge):
         self.img_out_switch = satge
+    def OcrSwitch(self,stage):
+        self.enable_ocr = stage
     def run(self):
         j = 1
         for i in range(self.page_index, self.page_index+self.page_add):
@@ -374,14 +394,16 @@ class OcrThread(QThread):
             if self.img_out_switch:
             # ! 输出截图
                 usb2md_copy.imgOutput(img_path)
+            
             # ! OCR部分
-            md = usb2md_copy.img2MD(usb2md_copy.ocr)
-            #w.home_page.textEdit.setMarkdown(md)
-            self.mdUpdate.emit(md)
-            self.tooltipContentUpdate.emit(f"OCR完成 {j}/{self.page_add}")
-            print(md)
-            file_obj.write(md)
-            file_obj.close()
+            if(self.enable_ocr):
+                md = usb2md_copy.img2MD(usb2md_copy.ocr)
+                #w.home_page.textEdit.setMarkdown(md)
+                self.mdUpdate.emit(md)
+                self.tooltipContentUpdate.emit(f"OCR完成 {j}/{self.page_add}")
+                print(md)
+                file_obj.write(md)
+                file_obj.close()
             # ! 下一屏
             usb2md_copy.nextScreen()
             time.sleep(config.NextPageWaitTime)
