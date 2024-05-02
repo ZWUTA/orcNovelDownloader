@@ -4830,7 +4830,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class OcrThread(QThread):\n    picUpdate = pyqtSignal()\n    mdUpdate = pyqtSignal(str)\n    tootipTitleUpdate = pyqtSignal(str)\n    tooltipContentUpdate = pyqtSignal(str)\n    indexdisplayValUpdate = pyqtSignal(int)\n    taskdone = pyqtSignal()\n    def __init__(self) -> None:\n        super(OcrThread,self).__init__()\n        self.enable_ocr = False",
+        "peekOfCode": "class OcrThread(QThread):\n    picUpdate = pyqtSignal()\n    cutedpicUpdate = pyqtSignal()\n    mdUpdate = pyqtSignal(str)\n    tootipTitleUpdate = pyqtSignal(str)\n    tooltipContentUpdate = pyqtSignal(str)\n    indexdisplayValUpdate = pyqtSignal(int)\n    taskdone = pyqtSignal()\n    def __init__(self) -> None:\n        super(OcrThread,self).__init__()",
         "detail": "main",
         "documentation": {}
     },

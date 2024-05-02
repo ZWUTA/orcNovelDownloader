@@ -202,6 +202,7 @@ class HomeInterface(SimpleInterface):
             parent=self.view
             )
 
+        #? 原始图片
         img_path = config.CapImgPath
         self.pic_widget = PicWidget(parent)
         if(os.path.exists(img_path)):
@@ -219,6 +220,26 @@ class HomeInterface(SimpleInterface):
             parent=self.view
             )
         self.PicViewCard.vBox2Center()
+
+        #? 裁剪后图片
+        cuted_img_path = config.CroppedImgPath
+        self.cuted_pic_widget = PicWidget(parent)
+        if(os.path.exists(cuted_img_path)):
+            self.cuted_pixmap = QPixmap(cuted_img_path)
+            self.cuted_pic_widget.setPixmap(self.cuted_pixmap)
+        #self.pic_card.setMaximumHeight(400)
+        #self.pic_card.setScaledContents(True)
+        self.cuted_pic_widget.setMaximumWidth(300)
+        self.cuted_pic_widget.setMaximumHeight(650)
+        self.cuted_pic_widget.setMinimumHeight(650)
+        self.cuted_PicViewCard = SimpleCard(
+            title="输出图片",
+            widget=self.cuted_pic_widget,
+            stretch=1,
+            parent=self.view
+            )
+        self.cuted_PicViewCard.vBox2Center()
+
         
         self.commandCard = SimpleCard(
             title= "Command",
@@ -231,6 +252,7 @@ class HomeInterface(SimpleInterface):
         
         self.hlayout = QHBoxLayout()
         self.hlayout.addWidget(self.PicViewCard)
+        self.hlayout.addWidget(self.cuted_PicViewCard)
         self.hlayout.addWidget(self.textEditCard)
         self.hwidget = QFrame(parent)
         self.hwidget.setLayout(self.hlayout)
@@ -348,11 +370,15 @@ class Window(FramelessWindow):
     def cutImgUpdate(self):
         self.home_page.pixmap = QPixmap(config.CapImgPath)
         self.home_page.pic_widget.updatePixmap(w.home_page.pixmap)
+    def cutedImgUpdate(self):
+        self.home_page.cuted_pixmap = QPixmap(config.CroppedImgPath)
+        self.home_page.cuted_pic_widget.updatePixmap(w.home_page.cuted_pixmap)
     def mdUpdate(self,md):
         self.home_page.textEdit.setMarkdown(md)
     def initOCR(self):
         self.ocr_thread=OcrThread()
         self.ocr_thread.picUpdate.connect(self.cutImgUpdate)
+        self.ocr_thread.cutedpicUpdate.connect(self.cutedImgUpdate)
         self.ocr_thread.mdUpdate.connect(self.mdUpdate)
         
         """
@@ -361,6 +387,7 @@ class Window(FramelessWindow):
 
 class OcrThread(QThread):
     picUpdate = pyqtSignal()
+    cutedpicUpdate = pyqtSignal()
     mdUpdate = pyqtSignal(str)
     tootipTitleUpdate = pyqtSignal(str)
     tooltipContentUpdate = pyqtSignal(str)
@@ -390,6 +417,7 @@ class OcrThread(QThread):
             self.picUpdate.emit()
             self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add}")
             usb2md_copy.cutImg()
+            self.cutedpicUpdate.emit()
             self.tooltipContentUpdate.emit(f"裁剪截图完成 {j}/{self.page_add}")
             if self.img_out_switch:
             # ! 输出截图
