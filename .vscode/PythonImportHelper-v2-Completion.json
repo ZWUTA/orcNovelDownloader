@@ -3040,6 +3040,14 @@
         "documentation": {}
     },
     {
+        "label": "Option",
+        "importPath": "click",
+        "description": "click",
+        "isExtraImport": true,
+        "detail": "click",
+        "documentation": {}
+    },
+    {
         "label": "widgets",
         "importPath": "qfluentwidgets.components",
         "description": "qfluentwidgets.components",
@@ -4524,7 +4532,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "WindowTitle = \"AndreaNeoNovelDownloader\"\nWindowIcon = \"app/resource/images/logo.png\"\n# ! 裁切设置\n# * 裁剪坐标为[y0:y1, x0:x1]\n#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强",
+        "peekOfCode": "WindowTitle = \"AndreaNeoNovelDownloader\"\nWindowIcon = \"app/resource/images/logo.png\"\n# ! 裁切设置\n# * 裁剪坐标为[y0:y1, x0:x1]\n#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nflag_raw = True\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置",
         "detail": "config",
         "documentation": {}
     },
@@ -4533,7 +4541,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "WindowIcon = \"app/resource/images/logo.png\"\n# ! 裁切设置\n# * 裁剪坐标为[y0:y1, x0:x1]\n#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4",
+        "peekOfCode": "WindowIcon = \"app/resource/images/logo.png\"\n# ! 裁切设置\n# * 裁剪坐标为[y0:y1, x0:x1]\n#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nflag_raw = True\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强",
         "detail": "config",
         "documentation": {}
     },
@@ -4542,7 +4550,16 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4\nZoomStage = True if(ZoomLevel != 0) else False\n    # * 标题识别\nTitleThresholdHigh = 70",
+        "peekOfCode": "#ImgCutPos = [170,2360,50,1000] # 裁剪坐标为[y0:y1, x0:x1]\n# ? Redmi Note12T Pro [170,2360,50,1000]\n# ? Redmi Note7 Pro   [145,2200,50,1000]\nflag_raw = True\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4\nZoomStage = True if(ZoomLevel != 0) else False\n    # * 标题识别",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "flag_raw",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "flag_raw = True\nImgCutPos = [170,2360,50,1000]\n# ! 识别设置\n    # * 识别增强\nZoomLevel = 4\nZoomStage = True if(ZoomLevel != 0) else False\n    # * 标题识别\nTitleThresholdHigh = 70\nEnable_TitleHigh = False\nTitleRegularExpression = \"^第.*章.*\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4596,7 +4613,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "TitleRegularExpression = \"^第.*章.*\"\nEnable_TitleRegularExpression = True\n    # * 段首识别\nHeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5",
+        "peekOfCode": "TitleRegularExpression = \"^第.*章.*\"\nEnable_TitleRegularExpression = True\n    # * 段首识别\nHeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0",
         "detail": "config",
         "documentation": {}
     },
@@ -4605,7 +4622,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "Enable_TitleRegularExpression = True\n    # * 段首识别\nHeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置",
+        "peekOfCode": "Enable_TitleRegularExpression = True\n    # * 段首识别\nHeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置",
         "detail": "config",
         "documentation": {}
     },
@@ -4614,7 +4631,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "HeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置",
+        "peekOfCode": "HeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置",
         "detail": "config",
         "documentation": {}
     },
@@ -4623,7 +4640,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "Enable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"",
+        "peekOfCode": "Enable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4632,7 +4649,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "LinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']",
+        "peekOfCode": "LinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']",
         "detail": "config",
         "documentation": {}
     },
@@ -4641,7 +4658,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "Enable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径",
+        "peekOfCode": "Enable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径",
         "detail": "config",
         "documentation": {}
     },
@@ -4650,7 +4667,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "NextPageWaitTime = 0.5\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"",
+        "peekOfCode": "NextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4686,7 +4703,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "OcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/临时文件/noveldownload\"",
+        "peekOfCode": "OcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/Temp/nocr\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4695,7 +4712,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "TempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/临时文件/noveldownload\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"",
+        "peekOfCode": "TempPath = \"R:/Temp\"\nCapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/Temp/nocr\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4704,7 +4721,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "CapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/临时文件/noveldownload\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"",
+        "peekOfCode": "CapImg = \"cap.png\"\nCroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/Temp/nocr\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4713,7 +4730,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "CroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/临时文件/noveldownload\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"\ndef getOutputImgPath(index:int,prefix:str):",
+        "peekOfCode": "CroppedImg = \"cv_cut_thor.png\"\nCapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/Temp/nocr\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"\ndef getOutputImgPath(index:int,prefix:str):",
         "detail": "config",
         "documentation": {}
     },
@@ -4722,7 +4739,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "CapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/临时文件/noveldownload\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"\ndef getOutputImgPath(index:int,prefix:str):\n    OutputImgName = f\"{prefix}_{index}_.png\"",
+        "peekOfCode": "CapImgPath = f\"{TempPath}/{CapImg}\"\nCroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/Temp/nocr\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"\ndef getOutputImgPath(index:int,prefix:str):\n    OutputImgName = f\"{prefix}_{index}_.png\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4731,7 +4748,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "CroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/临时文件/noveldownload\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"\ndef getOutputImgPath(index:int,prefix:str):\n    OutputImgName = f\"{prefix}_{index}_.png\"\n    return f\"{OutputPath}/{OutputImgPath}/{OutputImgName}\"",
+        "peekOfCode": "CroppedImgPath = f\"{TempPath}/{CroppedImg}\"\n    # * 输出文件路径\nOutputPath = \"D:/Temp/nocr\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"\ndef getOutputImgPath(index:int,prefix:str):\n    OutputImgName = f\"{prefix}_{index}_.png\"\n    return f\"{OutputPath}/{OutputImgPath}/{OutputImgName}\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4740,7 +4757,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "OutputPath = \"D:/临时文件/noveldownload\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"\ndef getOutputImgPath(index:int,prefix:str):\n    OutputImgName = f\"{prefix}_{index}_.png\"\n    return f\"{OutputPath}/{OutputImgPath}/{OutputImgName}\"",
+        "peekOfCode": "OutputPath = \"D:/Temp/nocr\"\nOutputImgPath = \"img\"\nOutputImgFullDir = f\"{OutputPath}/{OutputImgPath}\"\nMarkdownName = \"out.md\"\nMarkdownPath = f\"{OutputPath}/{MarkdownName}\"\ndef getOutputImgPath(index:int,prefix:str):\n    OutputImgName = f\"{prefix}_{index}_.png\"\n    return f\"{OutputPath}/{OutputImgPath}/{OutputImgName}\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4830,7 +4847,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class OcrThread(QThread):\n    picUpdate = pyqtSignal()\n    cutedpicUpdate = pyqtSignal()\n    mdUpdate = pyqtSignal(str)\n    tootipTitleUpdate = pyqtSignal(str)\n    tooltipContentUpdate = pyqtSignal(str)\n    indexdisplayValUpdate = pyqtSignal(int)\n    taskdone = pyqtSignal()\n    def __init__(self) -> None:\n        super(OcrThread,self).__init__()",
+        "peekOfCode": "class OcrThread(QThread):\n    picUpdate = pyqtSignal(str)\n    cutedpicUpdate = pyqtSignal()\n    mdUpdate = pyqtSignal(str)\n    tootipTitleUpdate = pyqtSignal(str)\n    tooltipContentUpdate = pyqtSignal(str)\n    indexdisplayValUpdate = pyqtSignal(int)\n    taskdone = pyqtSignal()\n    def __init__(self) -> None:\n        super(OcrThread,self).__init__()",
         "detail": "main",
         "documentation": {}
     },
@@ -4848,7 +4865,7 @@
         "kind": 2,
         "importPath": "usb2md_copy",
         "description": "usb2md_copy",
-        "peekOfCode": "def get_one_cap(cap_road):\n    os.system('adb shell screencap -p > ' + cap_road)\n    with open(cap_road, 'rb') as f:\n        data = f.read()\n    return data.replace(b'\\r\\n', b'\\n')\ndef getCap()->None:\n    cap = get_one_cap(config.CapImgPath)\n    with open(config.CapImgPath, 'wb') as f:\n        f.write(cap)\ndef cutImg()->None:",
+        "peekOfCode": "def get_one_cap(cap_road):\n    os.system('adb shell screencap -p > ' + cap_road)\n    with open(cap_road, 'rb') as f:\n        data = f.read()\n    return data.replace(b'\\r\\n', b'\\n')\ndef getCap()->None:\n    cap = get_one_cap(config.CapImgPath)\n    with open(config.CapImgPath, 'wb') as f:\n        f.write(cap)\ndef saveRawCap(outpath:str)->None:",
         "detail": "usb2md_copy",
         "documentation": {}
     },
@@ -4857,7 +4874,16 @@
         "kind": 2,
         "importPath": "usb2md_copy",
         "description": "usb2md_copy",
-        "peekOfCode": "def getCap()->None:\n    cap = get_one_cap(config.CapImgPath)\n    with open(config.CapImgPath, 'wb') as f:\n        f.write(cap)\ndef cutImg()->None:\n    img = cv2.imread(config.CapImgPath)\n    #print(img.shape)\n    cropped = img[config.ImgCutPos[0]:config.ImgCutPos[1], config.ImgCutPos[2]:config.ImgCutPos[3]]  # 裁剪坐标为[y0:y1, x0:x1]\n    cv2.imwrite(config.CroppedImgPath, cropped)\ndef nextScreen()->None:",
+        "peekOfCode": "def getCap()->None:\n    cap = get_one_cap(config.CapImgPath)\n    with open(config.CapImgPath, 'wb') as f:\n        f.write(cap)\ndef saveRawCap(outpath:str)->None:\n    if os.path.exists(config.OutputImgFullDir):\n        pass\n    else:\n        os.mkdir(config.OutputImgFullDir)\n    cap = get_one_cap(config.CapImgPath)",
+        "detail": "usb2md_copy",
+        "documentation": {}
+    },
+    {
+        "label": "saveRawCap",
+        "kind": 2,
+        "importPath": "usb2md_copy",
+        "description": "usb2md_copy",
+        "peekOfCode": "def saveRawCap(outpath:str)->None:\n    if os.path.exists(config.OutputImgFullDir):\n        pass\n    else:\n        os.mkdir(config.OutputImgFullDir)\n    cap = get_one_cap(config.CapImgPath)\n    with open(outpath, 'wb') as f:\n        f.write(cap)\ndef cutImg()->None:\n    img = cv2.imread(config.CapImgPath)",
         "detail": "usb2md_copy",
         "documentation": {}
     },
@@ -4866,7 +4892,7 @@
         "kind": 2,
         "importPath": "usb2md_copy",
         "description": "usb2md_copy",
-        "peekOfCode": "def cutImg()->None:\n    img = cv2.imread(config.CapImgPath)\n    #print(img.shape)\n    cropped = img[config.ImgCutPos[0]:config.ImgCutPos[1], config.ImgCutPos[2]:config.ImgCutPos[3]]  # 裁剪坐标为[y0:y1, x0:x1]\n    cv2.imwrite(config.CroppedImgPath, cropped)\ndef nextScreen()->None:\n    os.system('adb shell input swipe 540 1300 540 500 100')\ndef titleValidator(line:dict)->bool:\n    threshold = config.TitleThresholdHigh\n    # 行高大于阈值即为标题",
+        "peekOfCode": "def cutImg()->None:\n    img = cv2.imread(config.CapImgPath)\n    if(config.flag_raw):\n        cropped = img\n        cv2.imwrite(config.CroppedImgPath, cropped)\n    else:\n        #print(img.shape)\n        cropped = img[config.ImgCutPos[0]:config.ImgCutPos[1], config.ImgCutPos[2]:config.ImgCutPos[3]]  # 裁剪坐标为[y0:y1, x0:x1]\n        cv2.imwrite(config.CroppedImgPath, cropped)\ndef nextScreen()->None:",
         "detail": "usb2md_copy",
         "documentation": {}
     },

@@ -10,6 +10,7 @@ WindowIcon = "app/resource/images/logo.png"
 # ? Redmi Note12T Pro [170,2360,50,1000]
 # ? Redmi Note7 Pro   [145,2200,50,1000]
 
+flag_raw = True
 ImgCutPos = [170,2360,50,1000]
 
 # ! 识别设置
@@ -29,7 +30,7 @@ LinefeedThresholdDeltaHigh = 10
 Enable_LinefeedThresholdDeltaHigh = True
 
     # * 截图翻页等待时间
-NextPageWaitTime = 0.5
+NextPageWaitTime = 0
 
     # * 索引设置
 MaximumPage = 2147483647
@@ -47,7 +48,7 @@ CroppedImg = "cv_cut_thor.png"
 CapImgPath = f"{TempPath}/{CapImg}"
 CroppedImgPath = f"{TempPath}/{CroppedImg}"
     # * 输出文件路径
-OutputPath = "D:/临时文件/noveldownload"
+OutputPath = "D:/Temp/nocr"
 OutputImgPath = "img"
 OutputImgFullDir = f"{OutputPath}/{OutputImgPath}"
 MarkdownName = "out.md"

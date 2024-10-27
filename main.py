@@ -9,6 +9,7 @@ from PyQt5.QtGui import QIcon, QPainter, QImage, QBrush, QColor, QFont
 from PyQt5.QtWidgets import QApplication, QFrame, QStackedWidget, QHBoxLayout, QLabel
 
 
+from click import Option
 from qfluentwidgets import (NavigationInterface, NavigationItemPosition, NavigationWidget, MessageBox,
                             isDarkTheme, setTheme, Theme, setThemeColor, qrouter)
 from qfluentwidgets import FluentIcon as FIF
@@ -367,9 +368,13 @@ class Window(FramelessWindow):
         #!IMPORTANT: This line of code needs to be uncommented if the return button is enabled
         # qrouter.push(self.stackWidget, widget.objectName())
     
-    def cutImgUpdate(self):
-        self.home_page.pixmap = QPixmap(config.CapImgPath)
-        self.home_page.pic_widget.updatePixmap(w.home_page.pixmap)
+    def cutImgUpdate(self,img_path:typing.Optional[str] = None):
+        if img_path is None:
+            self.home_page.pixmap = QPixmap(config.CapImgPath)
+            self.home_page.pic_widget.updatePixmap(w.home_page.pixmap)
+        else:
+            self.home_page.pixmap = QPixmap(img_path)
+            self.home_page.pic_widget.updatePixmap(w.home_page.pixmap)
     def cutedImgUpdate(self):
         self.home_page.cuted_pixmap = QPixmap(config.CroppedImgPath)
         self.home_page.cuted_pic_widget.updatePixmap(w.home_page.cuted_pixmap)
@@ -386,7 +391,7 @@ class Window(FramelessWindow):
         """
 
 class OcrThread(QThread):
-    picUpdate = pyqtSignal()
+    picUpdate = pyqtSignal(str)
     cutedpicUpdate = pyqtSignal()
     mdUpdate = pyqtSignal(str)
     tootipTitleUpdate = pyqtSignal(str)
@@ -412,17 +417,24 @@ class OcrThread(QThread):
             
             self.indexdisplayValUpdate.emit(i)
             file_obj = open(usb2md_copy.file_path, mode='a', encoding='utf-8')
-            # ! 截图部分
-            usb2md_copy.getCap()
-            self.picUpdate.emit()
-            self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add}")
-            usb2md_copy.cutImg()
-            self.cutedpicUpdate.emit()
-            self.tooltipContentUpdate.emit(f"裁剪截图完成 {j}/{self.page_add}")
-            if self.img_out_switch:
-            # ! 输出截图
-                usb2md_copy.imgOutput(img_path)
-            
+            if config.flag_raw:
+                usb2md_copy.saveRawCap(img_path)
+                self.picUpdate.emit(img_path)
+                self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add}")
+            else:
+                # ! 截图部分
+                usb2md_copy.getCap()
+                self.picUpdate.emit()
+                self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add}")
+                
+                usb2md_copy.cutImg()
+                self.cutedpicUpdate.emit()
+                self.tooltipContentUpdate.emit(f"裁剪截图完成 {j}/{self.page_add}")
+                if self.img_out_switch:
+                # ! 输出截图
+                    usb2md_copy.imgOutput(img_path)
+                
+            # ! OCR部分
             # ! OCR部分
             if(self.enable_ocr):
                 md = usb2md_copy.img2MD(usb2md_copy.ocr)

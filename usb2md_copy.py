@@ -17,11 +17,24 @@ def getCap()->None:
     with open(config.CapImgPath, 'wb') as f:
         f.write(cap)
 
+def saveRawCap(outpath:str)->None:
+    if os.path.exists(config.OutputImgFullDir):
+        pass
+    else:
+        os.mkdir(config.OutputImgFullDir)
+    cap = get_one_cap(config.CapImgPath)
+    with open(outpath, 'wb') as f:
+        f.write(cap)
+
 def cutImg()->None:
     img = cv2.imread(config.CapImgPath)
-    #print(img.shape)
-    cropped = img[config.ImgCutPos[0]:config.ImgCutPos[1], config.ImgCutPos[2]:config.ImgCutPos[3]]  # 裁剪坐标为[y0:y1, x0:x1]
-    cv2.imwrite(config.CroppedImgPath, cropped)
+    if(config.flag_raw):
+        cropped = img
+        cv2.imwrite(config.CroppedImgPath, cropped)
+    else:
+        #print(img.shape)
+        cropped = img[config.ImgCutPos[0]:config.ImgCutPos[1], config.ImgCutPos[2]:config.ImgCutPos[3]]  # 裁剪坐标为[y0:y1, x0:x1]
+        cv2.imwrite(config.CroppedImgPath, cropped)
 
 def nextScreen()->None:
     os.system('adb shell input swipe 540 1300 540 500 100')
