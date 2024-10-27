@@ -412,43 +412,50 @@ class OcrThread(QThread):
         self.enable_ocr = stage
     def run(self):
         j = 1
-        for i in range(self.page_index, self.page_index+self.page_add):
-            img_path = config.getOutputImgPath(i,self.prefix)
-            
+        start_time = time.time()  # 记录开始时间
+        total_time = 0  # 用于计算总时间
+
+        for i in range(self.page_index, self.page_index + self.page_add):
+            img_path = config.getOutputImgPath(i, self.prefix)
             self.indexdisplayValUpdate.emit(i)
             file_obj = open(usb2md_copy.file_path, mode='a', encoding='utf-8')
+
             if config.flag_raw:
                 usb2md_copy.saveRawCap(img_path)
                 self.picUpdate.emit(img_path)
-                self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add}")
+                total_time = time.time() - start_time  # 更新总用时
+                estimated_time = total_time / j * (self.page_add - j)  # 计算预估剩余时间
+                self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add} ETA:{int(total_time)/60:.2f}/{int(estimated_time)/60:.2f}min")
             else:
-                # ! 截图部分
+                # 截图部分
                 usb2md_copy.getCap()
                 self.picUpdate.emit()
-                self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add}")
+                total_time = time.time() - start_time  # 更新总用时
+                estimated_time = total_time / j * (self.page_add - j)  # 计算预估剩余时间
+                self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add} ETA:{int(total_time)/60:.2f}/{int(estimated_time)/60:.2f}min")
                 
                 usb2md_copy.cutImg()
                 self.cutedpicUpdate.emit()
-                self.tooltipContentUpdate.emit(f"裁剪截图完成 {j}/{self.page_add}")
+                self.tooltipContentUpdate.emit(f"裁剪截图完成 {j}/{self.page_add} ETA:{int(total_time)/60:.2f}/{int(estimated_time)/60:.2f}min")
                 if self.img_out_switch:
-                # ! 输出截图
+                    # 输出截图
                     usb2md_copy.imgOutput(img_path)
-                
-            # ! OCR部分
-            # ! OCR部分
-            if(self.enable_ocr):
+
+            # OCR部分
+            if self.enable_ocr:
                 md = usb2md_copy.img2MD(usb2md_copy.ocr)
-                #w.home_page.textEdit.setMarkdown(md)
                 self.mdUpdate.emit(md)
-                self.tooltipContentUpdate.emit(f"OCR完成 {j}/{self.page_add}")
+                self.tooltipContentUpdate.emit(f"OCR完成 {j}/{self.page_add} ETA:{int(total_time)/60:.2f}/{int(estimated_time)/60:.2f}min")
                 print(md)
                 file_obj.write(md)
                 file_obj.close()
-            # ! 下一屏
+
+            # 下一屏
             usb2md_copy.nextScreen()
             time.sleep(config.NextPageWaitTime)
             j += 1
-            self.indexdisplayValUpdate.emit(i+1)
+            self.indexdisplayValUpdate.emit(i + 1)
+
         self.taskdone.emit()
 
 if __name__ == '__main__':
