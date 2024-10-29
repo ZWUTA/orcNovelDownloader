@@ -4622,7 +4622,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "Enable_TitleRegularExpression = True\n    # * 段首识别\nHeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置",
+        "peekOfCode": "Enable_TitleRegularExpression = True\n    # * 段首识别\nHeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\nVolumeKeyPagingEnabled = True",
         "detail": "config",
         "documentation": {}
     },
@@ -4631,7 +4631,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "HeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置",
+        "peekOfCode": "HeaderThresholdIndentation = 100\nEnable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\nVolumeKeyPagingEnabled = True\n    # * 索引设置\nMaximumPage = 2147483647",
         "detail": "config",
         "documentation": {}
     },
@@ -4640,7 +4640,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "Enable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"",
+        "peekOfCode": "Enable_HeaderIndentation = True\n    # * 换行识别\nLinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\nVolumeKeyPagingEnabled = True\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置",
         "detail": "config",
         "documentation": {}
     },
@@ -4649,7 +4649,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "LinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']",
+        "peekOfCode": "LinefeedThresholdDeltaHigh = 10\nEnable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\nVolumeKeyPagingEnabled = True\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4658,7 +4658,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "Enable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径",
+        "peekOfCode": "Enable_LinefeedThresholdDeltaHigh = True\n    # * 截图翻页等待时间\nNextPageWaitTime = 0\nVolumeKeyPagingEnabled = True\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']",
         "detail": "config",
         "documentation": {}
     },
@@ -4667,7 +4667,16 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "NextPageWaitTime = 0\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"",
+        "peekOfCode": "NextPageWaitTime = 0\nVolumeKeyPagingEnabled = True\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "VolumeKeyPagingEnabled",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "VolumeKeyPagingEnabled = True\n    # * 索引设置\nMaximumPage = 2147483647\n# ! OCR设置\nRecModel = \"densenet_lite_136-gru\"\nDetModel = \"db_resnet34\"\nOcrProcessorsType = \"cpu\"  # ['cpu', 'gpu', 'cuda']\n# ! 文件路径\n    # * 临时文件路径\nTempPath = \"R:/Temp\"",
         "detail": "config",
         "documentation": {}
     },
@@ -4865,7 +4874,16 @@
         "kind": 2,
         "importPath": "usb2md_copy",
         "description": "usb2md_copy",
-        "peekOfCode": "def get_one_cap(cap_road):\n    os.system('adb shell screencap -p > ' + cap_road)\n    with open(cap_road, 'rb') as f:\n        data = f.read()\n    return data.replace(b'\\r\\n', b'\\n')\ndef getCap()->None:\n    cap = get_one_cap(config.CapImgPath)\n    with open(config.CapImgPath, 'wb') as f:\n        f.write(cap)\ndef saveRawCap(outpath:str)->None:",
+        "peekOfCode": "def get_one_cap(cap_road):\n    os.system('adb shell screencap -p > ' + cap_road)\n    with open(cap_road, 'rb') as f:\n        data = f.read()\n    return data.replace(b'\\r\\n', b'\\n')\ndef fast_get_one_cap() -> bytes:\n    # 获取截图并将其存储在内存中，避免直接保存到硬盘\n    result = os.popen('adb shell screencap -p').read()\n    data = result.encode('latin1')  # 转为 bytes 格式\n    return data.replace(b'\\r\\n', b'\\n')",
+        "detail": "usb2md_copy",
+        "documentation": {}
+    },
+    {
+        "label": "fast_get_one_cap",
+        "kind": 2,
+        "importPath": "usb2md_copy",
+        "description": "usb2md_copy",
+        "peekOfCode": "def fast_get_one_cap() -> bytes:\n    # 获取截图并将其存储在内存中，避免直接保存到硬盘\n    result = os.popen('adb shell screencap -p').read()\n    data = result.encode('latin1')  # 转为 bytes 格式\n    return data.replace(b'\\r\\n', b'\\n')\ndef getCap()->None:\n    cap = get_one_cap(config.CapImgPath)\n    with open(config.CapImgPath, 'wb') as f:\n        f.write(cap)\ndef saveRawCap(outpath:str)->None:",
         "detail": "usb2md_copy",
         "documentation": {}
     },
@@ -4883,7 +4901,16 @@
         "kind": 2,
         "importPath": "usb2md_copy",
         "description": "usb2md_copy",
-        "peekOfCode": "def saveRawCap(outpath:str)->None:\n    if os.path.exists(config.OutputImgFullDir):\n        pass\n    else:\n        os.mkdir(config.OutputImgFullDir)\n    cap = get_one_cap(config.CapImgPath)\n    with open(outpath, 'wb') as f:\n        f.write(cap)\ndef cutImg()->None:\n    img = cv2.imread(config.CapImgPath)",
+        "peekOfCode": "def saveRawCap(outpath:str)->None:\n    if os.path.exists(config.OutputImgFullDir):\n        pass\n    else:\n        os.mkdir(config.OutputImgFullDir)\n    cap = get_one_cap(config.CapImgPath)\n    with open(outpath, 'wb') as f:\n        f.write(cap)\ndef saveRawCap(outpath: str) -> bytes:\n    # 创建输出目录（如果不存在）",
+        "detail": "usb2md_copy",
+        "documentation": {}
+    },
+    {
+        "label": "saveRawCap",
+        "kind": 2,
+        "importPath": "usb2md_copy",
+        "description": "usb2md_copy",
+        "peekOfCode": "def saveRawCap(outpath: str) -> bytes:\n    # 创建输出目录（如果不存在）\n    os.makedirs(config.OutputImgFullDir, exist_ok=True)\n    cap = fast_get_one_cap()\n    with open(outpath, 'wb') as f:\n        f.write(cap)\n    return cap  # 返回截图的二进制流\ndef cutImg()->None:\n    img = cv2.imread(config.CapImgPath)\n    if(config.flag_raw):",
         "detail": "usb2md_copy",
         "documentation": {}
     },
@@ -4901,7 +4928,7 @@
         "kind": 2,
         "importPath": "usb2md_copy",
         "description": "usb2md_copy",
-        "peekOfCode": "def nextScreen()->None:\n    os.system('adb shell input swipe 540 1300 540 500 100')\ndef titleValidator(line:dict)->bool:\n    threshold = config.TitleThresholdHigh\n    # 行高大于阈值即为标题\n    pattern = config.TitleRegularExpression\n    # 使用正则表达式匹配\n    hight = line[\"position\"][3][1] - line[\"position\"][0][1]\n    if(hight >= threshold and config.Enable_TitleHigh):\n        return True",
+        "peekOfCode": "def nextScreen()->None:\n    if config.VolumeKeyPagingEnabled:\n        os.system(\"adb shell input keyevent 25\")\n    else:\n        os.system('adb shell input swipe 540 1300 540 500 100')\ndef titleValidator(line:dict)->bool:\n    threshold = config.TitleThresholdHigh\n    # 行高大于阈值即为标题\n    pattern = config.TitleRegularExpression\n    # 使用正则表达式匹配",
         "detail": "usb2md_copy",
         "documentation": {}
     },

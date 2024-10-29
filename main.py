@@ -10,6 +10,7 @@ from PyQt5.QtWidgets import QApplication, QFrame, QStackedWidget, QHBoxLayout, Q
 
 
 from click import Option
+import py
 from qfluentwidgets import (NavigationInterface, NavigationItemPosition, NavigationWidget, MessageBox,
                             isDarkTheme, setTheme, Theme, setThemeColor, qrouter)
 from qfluentwidgets import FluentIcon as FIF
@@ -368,13 +369,22 @@ class Window(FramelessWindow):
         #!IMPORTANT: This line of code needs to be uncommented if the return button is enabled
         # qrouter.push(self.stackWidget, widget.objectName())
     
-    def cutImgUpdate(self,img_path:typing.Optional[str] = None):
-        if img_path is None:
-            self.home_page.pixmap = QPixmap(config.CapImgPath)
-            self.home_page.pic_widget.updatePixmap(w.home_page.pixmap)
+    def cutImgUpdate(self, img_input: str | bytes | None):
+        self.home_page.pixmap = QPixmap()
+
+        if img_input is None:
+            # 从默认路径加载图像
+            self.home_page.pixmap.load(config.CapImgPath)
+        elif isinstance(img_input, str):
+            # 如果是字符串，则认为是路径
+            self.home_page.pixmap.load(img_input)
+        elif isinstance(img_input, bytes):
+            # 如果是字节数据，则从内存中加载
+            self.home_page.pixmap.loadFromData(img_input)
         else:
-            self.home_page.pixmap = QPixmap(img_path)
-            self.home_page.pic_widget.updatePixmap(w.home_page.pixmap)
+            raise ValueError("img_input must be None, a file path (str), or image data (bytes)")
+        # 更新图像小部件
+        self.home_page.pic_widget.updatePixmap(self.home_page.pixmap)
     def cutedImgUpdate(self):
         self.home_page.cuted_pixmap = QPixmap(config.CroppedImgPath)
         self.home_page.cuted_pic_widget.updatePixmap(w.home_page.cuted_pixmap)
@@ -383,6 +393,7 @@ class Window(FramelessWindow):
     def initOCR(self):
         self.ocr_thread=OcrThread()
         self.ocr_thread.picUpdate.connect(self.cutImgUpdate)
+        self.ocr_thread.fastPicUpdate.connect(self.cutImgUpdate)
         self.ocr_thread.cutedpicUpdate.connect(self.cutedImgUpdate)
         self.ocr_thread.mdUpdate.connect(self.mdUpdate)
         
@@ -392,6 +403,7 @@ class Window(FramelessWindow):
 
 class OcrThread(QThread):
     picUpdate = pyqtSignal(str)
+    fastPicUpdate = pyqtSignal(bytes)
     cutedpicUpdate = pyqtSignal()
     mdUpdate = pyqtSignal(str)
     tootipTitleUpdate = pyqtSignal(str)
@@ -420,16 +432,17 @@ class OcrThread(QThread):
             self.indexdisplayValUpdate.emit(i)
             file_obj = open(usb2md_copy.file_path, mode='a', encoding='utf-8')
 
-            if config.flag_raw:
-                usb2md_copy.saveRawCap(img_path)
-                self.picUpdate.emit(img_path)
+            if config.flag_raw and (self.enable_ocr == False):
+                #usb2md_copy.saveRawCap(img_path)
+                img = usb2md_copy.fastSaveRawCap(img_path)
+                self.fastPicUpdate.emit(img)
                 total_time = time.time() - start_time  # 更新总用时
                 estimated_time = total_time / j * (self.page_add - j)  # 计算预估剩余时间
                 self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add} ETA:{int(total_time)/60:.2f}/{int(estimated_time)/60:.2f}min")
             else:
                 # 截图部分
                 usb2md_copy.getCap()
-                self.picUpdate.emit()
+                self.picUpdate.emit(img_path)
                 total_time = time.time() - start_time  # 更新总用时
                 estimated_time = total_time / j * (self.page_add - j)  # 计算预估剩余时间
                 self.tooltipContentUpdate.emit(f"创建截图完成 {j}/{self.page_add} ETA:{int(total_time)/60:.2f}/{int(estimated_time)/60:.2f}min")

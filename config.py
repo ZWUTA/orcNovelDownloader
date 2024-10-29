@@ -31,6 +31,7 @@ Enable_LinefeedThresholdDeltaHigh = True
 
     # * 截图翻页等待时间
 NextPageWaitTime = 0
+VolumeKeyPagingEnabled = True
 
     # * 索引设置
 MaximumPage = 2147483647

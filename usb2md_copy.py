@@ -5,12 +5,22 @@ import os
 import shutil
 from cnocr import CnOcr
 import config
+import subprocess
 
 def get_one_cap(cap_road):
     os.system('adb shell screencap -p > ' + cap_road)
     with open(cap_road, 'rb') as f:
         data = f.read()
     return data.replace(b'\r\n', b'\n')
+
+
+
+def fast_get_one_cap() -> bytes:
+    # 直接获取截图的二进制数据
+    result = subprocess.check_output(['adb', 'shell', 'screencap', '-p'])
+    # 替换截图中的换行符
+    return result.replace(b'\r\n', b'\n')
+
 
 def getCap()->None:
     cap = get_one_cap(config.CapImgPath)
@@ -26,6 +36,14 @@ def saveRawCap(outpath:str)->None:
     with open(outpath, 'wb') as f:
         f.write(cap)
 
+def fastSaveRawCap(outpath: str) -> bytes:
+    # 创建输出目录（如果不存在）
+    os.makedirs(config.OutputImgFullDir, exist_ok=True)
+    cap = fast_get_one_cap()
+    with open(outpath, 'wb') as f:
+        f.write(cap)
+    return cap  # 返回截图的二进制流
+
 def cutImg()->None:
     img = cv2.imread(config.CapImgPath)
     if(config.flag_raw):
@@ -37,7 +55,10 @@ def cutImg()->None:
         cv2.imwrite(config.CroppedImgPath, cropped)
 
 def nextScreen()->None:
-    os.system('adb shell input swipe 540 1300 540 500 100')
+    if config.VolumeKeyPagingEnabled:
+        os.system("adb shell input keyevent 25")
+    else:
+        os.system('adb shell input swipe 540 1300 540 500 100')
 
 
 
